@@ -1,0 +1,27 @@
+{
+  "name": "sales-marketing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts",
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/index.js",
+    "seed": "ts-node-dev src/seeders/generate-sales-data.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.7.5",
+    "@faker-js/faker": "^8.0.2",
+    "dotenv": "^16.3.1",
+    "graphql": "^16.7.1",
+    "mongoose": "^7.4.0"
+  }
+}

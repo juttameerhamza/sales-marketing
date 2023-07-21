@@ -1,0 +1,25 @@
+version: '3'
+services:
+  server:
+    build: ./server
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - MONGO_URI=mongodb://db/salesDashboard
+    depends_on:
+      - db
+  client:
+    build: ./client
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - WATCHPACK_POLLING=true
+  db:
+    image: mongo
